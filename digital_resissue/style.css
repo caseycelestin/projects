@@ -1,0 +1,317 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	font-family: OPTICenturyNova, times;
+}
+
+#container {
+	width: 1024px;
+	height: 1800px;
+	border: 1px solid black; 
+	margin: auto;
+	margin-top: 40px;
+	margin-bottom: 40px;
+	box-shadow: 10px 10px 5px #888888;
+	background-image: 
+	-webkit-linear-gradient(#FFFFFF, #8A0707);
+	background-size: 1400%;
+}
+
+
+
+#bord {
+	width: 944px;
+	margin: auto;
+	margin-top: 40px;
+	margin-bottom: 40px;
+	/*border: 1px solid black;*/
+}
+
+#header {
+	border-bottom: 1px solid black;
+}
+
+#title h1 {
+	font-size: 64px;
+	letter-spacing: -2px;
+	text-align: center;
+	/*border: 1px solid black;*/
+}
+
+#header_break {
+	height: 3px;
+	margin-top: 8px;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+}
+
+#header_info h3{
+	margin-top: 4px;
+	padding-bottom: 2px;
+	display: inline-block;
+	font-size: 12px;
+	width: 310px;
+
+}
+
+#info_center {
+	text-align: center;
+}
+
+#info_right {
+	text-align: right;
+	position: relative;
+	left: 6px;
+}
+
+#content {
+	margin-right: 10px;
+	margin-left: 10px;
+	margin-top: 15px;
+	/*border: 1px solid black;*/
+}
+
+.article h2 {
+	font-size: 36px;
+	text-align: center;
+}
+
+.article h3 {
+	font-size: 14px;
+}
+
+.article p {
+	line-height: 18px;
+	text-indent: 30px;
+	font-size: 12px;
+	text-align: justify;
+}
+
+#stocks {
+	width: 304px;
+	float: right;
+	clear: right;
+	margin-left: 10px;
+	padding-left: 10px;
+	/*border: 1px solid black;*/
+}
+
+#stocks h2 {
+	font-size: 20px;
+	text-align: left;
+}
+
+#stocks img {
+	width: 304px;
+	padding-bottom: 8px;
+	border-bottom: 1px solid black;
+}
+
+#spacer {
+	width: 0px;
+	height: 700px;
+	float: left;
+	clear: left; 
+}
+
+#sassoon_ad {
+	width: 304px;
+	margin-right: 10px;
+	padding-right: 10px;
+	border-top : 1px solid black;
+	border-bottom: 1px solid black;
+	float: left;
+	clear: left;
+}
+
+#sassoon_ad img {
+	width: 312px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#harrys_spacer{
+	width: 0px;
+	height: 389px;
+	float: right;
+	clear: right;	
+	/*border: 1px solid black;*/
+}
+
+#harrys{
+	width: 304px;
+	float: right;
+	clear: right;
+	margin-left: 10px;
+	padding-left: 10px;
+	padding-top: 9px;
+	border-top: 1px solid black;
+}
+
+#harrys h2 {
+	text-decoration: underline;
+}
+
+#harrys h3 {
+	font-size: 30px;
+	margin-top: 3px; 
+}
+
+#harrys h4 {
+	font-size: 14px;
+	border-bottom: 1px solid black;
+	letter-spacing: 3px;
+	width: 225px;
+	margin-bottom: 6px;
+}a
+
+#harrys a {
+	color: black;
+	text-decoration: none;
+}
+
+#harrys a:hover {
+	color: #8A0707;
+}
+
+.ad_hover {
+	color: #FFD700;
+	text-shadow: 
+	-1px 0 black, 0 1px black, 1px 0 black, 
+	0 -1px black;
+	font-size: 16px;
+}
+
+.hover_red:hover {
+	color:#8A0707;
+}
+/*start of Harry's styling*/
+#hheader_spacer {
+	width: 0px;
+	height: 20px;
+}
+
+#header_info h4 {
+	font-size: 11px;
+	float: left;
+	padding-right: 10px;
+	padding-left: 10px;
+	margin-top: 3px;
+	padding-top: 1px; 
+	border-right: 1px solid black;
+}
+
+#header_info h5 {
+	font-size: 12px;
+	float: right;
+	padding-left: 10px;
+	margin-top: 3px;
+	padding-top: 1px;
+	letter-spacing: 1px;
+}
+
+#recipe {
+	width: 304px;
+	float: left;
+	clear: left;
+	margin-right: 10px;
+	padding-right: : 10px;
+	margin-bottom: 10px;
+	padding-bottom: 8px;
+	border-bottom: 1px solid black;*/
+}
+
+#recipe h2{
+	text-align: left;
+}
+
+#next_page {
+	text-align: center;
+	text-decoration: underline;
+
+}
+
+#recipe_title {
+	margin-top: 10px;
+}
+
+#recipe_author {
+	text-align: right;
+	padding-bottom: 17px;
+}
+
+#jnb_buffer{
+	float: right;
+	clear: right;
+	width: 0px;
+	height: 300px;
+}
+
+#jnb_ad{
+	float: right;
+	clear: right;
+	width: 304px;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	margin-top: -5px; 
+	margin-left: 10px;
+	padding-left: 10px;
+
+}
+
+#bb_buffer{
+	float: left;
+	clear: left;
+	width: 0px;
+	height: 530px;
+}
+
+#bb_ad{
+	float: left;
+	clear: left;
+	width: 304px;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	margin-right: 10px;
+	padding-right: 10px;
+	padding-left: 10px;
+	padding-top: 10px;
+	padding: 10px;
+
+}
+
+#return{
+	width: 300px;
+	text-align:  center;
+	margin: auto;
+}
+
+a {
+	color: black;
+	text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
