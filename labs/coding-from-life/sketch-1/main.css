@@ -1,0 +1,55 @@
+body {
+  background-color: black;
+}
+
+.frame {
+  width: 1000px;
+  height: 600px;
+  background: white;
+  margin: 30px auto;
+  position: relative;
+}
+
+/* Your CSS goes here */
+.table{
+	border: 1px solid black;
+}
+
+#top {
+	display: inline-block;
+	width: 500px;
+	height: 200px;
+	position: relative;
+	right: -84px;
+	-webkit-transform: skew(-40deg);
+	   -moz-transform: skew(-40deg);
+	     -o-transform: skew(-40deg);
+	background: #deb887;
+}
+
+#front {
+	width: 500px;
+	height: 250px;
+	top: -5px;
+	background: #CDAA7D;
+	display: inline-block;
+}
+
+#right_top{
+	display: inline-block;
+	width: 0;
+	height: 0;
+	display: inline-block;
+	position: relative;
+	border-bottom: 200px solid red;
+	border-left: 167px solid transparent;
+}
+
+#right_bottom {
+	width: 0;
+	height: 0;
+	display: inline-block;
+	position: relative;
+	border-top: 250px solid #CDAA7D;
+	border-right: 100px solid transparent;
+}
