@@ -8,11 +8,17 @@ body {
   background: white;
   margin: 30px auto;
   position: relative;
+
 }
 
 /* Your CSS goes here */
 .table{
-	border: 1px solid black;
+	width: 675px;
+	margin: auto;
+	position: absolute;
+	top: 150px;
+	left: 200px;
+	z-index: 0;
 }
 
 #top {
@@ -32,6 +38,8 @@ body {
 	height: 250px;
 	top: -5px;
 	background: #CDAA7D;
+	position: relative;
+	top: -4px;
 	display: inline-block;
 }
 
@@ -41,7 +49,8 @@ body {
 	height: 0;
 	display: inline-block;
 	position: relative;
-	border-bottom: 200px solid red;
+	right: 4px;
+	border-bottom: 200px solid #bd9a6c;
 	border-left: 167px solid transparent;
 }
 
@@ -50,6 +59,47 @@ body {
 	height: 0;
 	display: inline-block;
 	position: relative;
-	border-top: 250px solid #CDAA7D;
-	border-right: 100px solid transparent;
+	right: 4px;
+	top: -4px;
+	border-top: 250px solid #bd9a6c;
+	border-right: 167px solid transparent;
 }
+
+.book-one {
+	z-index: 1;
+}
+
+#b1_front {
+	width: 100px;
+	height: 15px;
+	border: solid black 1px;
+	position: absolute;
+	top: 275px;
+	left: 325px;
+
+	z-index: 1;
+}
+
+#b1_top {
+	width: 100px;
+	height: 30px;
+	-webkit-transform: skew(-40deg);
+	   -moz-transform: skew(-40deg);
+	     -o-transform: skew(-40deg);
+	border: solid black 1px;
+	position: absolute;
+	top: 244px;
+	left: 338px;
+
+	z-index: 1;
+}
+
+
+
+
+
+
+
+
+
+
