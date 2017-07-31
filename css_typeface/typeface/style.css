@@ -1,0 +1,224 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+#container {
+	width: 40px;
+	height: 60px;
+	position: absolute;
+	top: 200px;
+	left: 200px;
+}
+
+#container div{
+	float: left;
+}
+
+.short_col {
+	height: 100%;
+	width: 6px;
+}
+
+.long_vert {
+	height: 100%;
+	width: 100%;
+}
+
+.mid_vert {
+	width: 100%;
+	height: 33px;
+}
+
+.short_vert {
+	width: 100%;
+	height: 21px;
+}
+
+.block {
+	width: 6px;
+	height: 6px;
+}
+
+#center {
+	height: 100%;
+	width: 28px;
+}
+
+.center_bar {
+	height: 6px;
+	width: 100%;
+}
+
+.center_vert {
+	height: 21px;
+	width: 6px;
+	margin-left: 11px;
+	margin-right: 11px;
+}
+
+.center_vert_long {
+	height: 48px;
+	width: 6px;
+	margin-left: 11px;
+	margin-right: 11px;
+}
+
+.bar_right {
+	height: 6px;
+	width: 17px;
+}
+
+.bar_left {
+	height: 6px;
+	width: 11px;
+}
+
+.bar_half{
+	height: 6px;
+	width: 50%;
+}
+
+.top {
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	position: relative;
+}
+
+.bottom {
+	z-index: 0;
+	outline: 1px solid red;
+}
+
+.buffer {
+	width: 2.4px;
+	height: 30px;
+}
+
+.buffer_m {
+	width: 2.5px;
+	height: 30px;
+}
+
+.buffer_n {
+	height: 30px;
+	width: 11.2px;
+}
+
+.buffer_q {
+	height: 21px;
+	width: 18px;
+}
+
+.buffer_r {
+	height: 27px;
+	width: 20px;
+}
+.buffer_x {
+	height: 10px;
+	width: 3px;
+}
+
+.buffer_y {
+	height: 27px;
+	width: 10px
+}
+
+.buffer_z {
+	height: 48px;
+	width:8px;
+}
+.buffer_z2 {
+	height: 24px;
+	width: 4px;
+}
+
+.x_block {
+	height: 12px;
+	width: 7px;
+}
+
+
+.buffer_right {
+	width: 8.6px;
+	height: 30px;
+}
+
+.short_block {
+	width: 6px;
+	height: 3px;
+}
+
+
+
+.slantf {
+	width: 6px;
+	height: 30px;
+	transform: skew(-29.54deg);
+}
+
+.slantf_long {
+	width: 6px;
+	height: 60px;
+	transform: skew(-29.54deg);
+}
+.slantf_mid {
+	width: 6px;
+	height: 27px;
+	transform: skew(-29.54deg);
+}
+
+.slantf_z{ 
+	width: 6px;
+	height: 48px;
+	transform: skew(-29.54deg);
+ }
+
+.slantb {
+	width: 6px;
+	height: 30px;
+	transform: skew(29.54deg);
+}
+
+.slantb_long {
+	width: 6px;
+	height: 60px;
+	transform: skew(29.54deg);
+}
+
+.slantb_mid {
+	width: 6px;
+	height: 27px;
+	transform: skew(29.54deg);
+}
+
+.slantb_short {
+	width: 6px;
+	height: 21px;
+	transform: skew(29.54deg);
+}
+
+.slant_col {
+	width: 17px;
+	height: 100%;
+}
+
+.new {
+	width: 11px;
+	height: 100%;
+}
+
+.slim {
+	width: 6px;
+	height: 100%;
+}
+
+
+
+
+
+
+
+
