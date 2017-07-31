@@ -1,3 +1,5 @@
+
+
 body {
   background-color: black;
 }
@@ -12,88 +14,202 @@ body {
 }
 
 /* Your CSS goes here */
-.table{
-	width: 675px;
-	margin: auto;
-	position: absolute;
+.frame div {
+	float: left;
+}
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+.table {
+/*	border: 1px solid black;
+*/	position: relative;
 	top: 150px;
-	left: 200px;
+	left: 100px;
 	z-index: 0;
 }
 
 #top {
-	display: inline-block;
-	width: 500px;
 	height: 200px;
+	width: 600px;
+	background-color: #DAA250;
+	transform: skew(-45deg);
 	position: relative;
-	right: -84px;
-	-webkit-transform: skew(-40deg);
-	   -moz-transform: skew(-40deg);
-	     -o-transform: skew(-40deg);
-	background: #deb887;
+	left: 100px
 }
 
 #front {
-	width: 500px;
-	height: 250px;
-	top: -5px;
-	background: #CDAA7D;
-	position: relative;
-	top: -4px;
-	display: inline-block;
+	height: 200px;
+	width: 600px;
+	background-color: #E3A550;
 }
 
-#right_top{
-	display: inline-block;
-	width: 0;
-	height: 0;
-	display: inline-block;
+#right {
+	height: 200px;
+	width: 200px;
+	background-color: #C58C38;
+	transform: skewY(-45deg);
 	position: relative;
-	right: 4px;
-	border-bottom: 200px solid #bd9a6c;
-	border-left: 167px solid transparent;
-}
-
-#right_bottom {
-	width: 0;
-	height: 0;
-	display: inline-block;
-	position: relative;
-	right: 4px;
-	top: -4px;
-	border-top: 250px solid #bd9a6c;
-	border-right: 167px solid transparent;
+	top: -100px;
 }
 
 .book-one {
 	z-index: 1;
+	height: 60px;
+	width: 150px;
+	position: absolute;
+	top: 225px;
+	left: 250px;
 }
 
-#b1_front {
-	width: 100px;
-	height: 15px;
-	border: solid black 1px;
-	position: absolute;
-	top: 275px;
-	left: 325px;
+.book-one div {
+	outline: 1px solid black;
+	background-color: white;
+}
 
-	z-index: 1;
+.book-two {
+	z-index: 2;
+	height: 60px;
+	width: 150px;
+	position: absolute;
+	top: 215px;
+	left: 250px;
+}
+
+.book-two div {
+	outline: 1px solid black;
+	background-color: white;
+}
+
+.book-two #b1_front{
+	background-color: #787576;
 }
 
 #b1_top {
 	width: 100px;
-	height: 30px;
-	-webkit-transform: skew(-40deg);
-	   -moz-transform: skew(-40deg);
-	     -o-transform: skew(-40deg);
-	border: solid black 1px;
-	position: absolute;
-	top: 244px;
-	left: 338px;
-
-	z-index: 1;
+	height: 50px;
+	transform: skew(-45deg);
+	position: relative;
+	right: -25px;
 }
 
+#b1_front {
+	width: 100px;
+	height: 10px;
+}
+
+#b1_right {
+	width: 50px;
+	height: 10px;
+	transform: skewY(-45deg);
+	position: relative;
+	top: -25px;
+
+}
+
+.book-three {
+	z-index: 3;
+	height: 46px;
+	width: 116px;
+	position: absolute;
+	top: 210px;
+	left: 260px;
+}
+
+.book-three div {
+	outline: 1px solid black;
+	background-color: white;
+}
+
+.book-three #b3_top {
+	background-color: #D44738;
+}
+
+#b3_top {
+	width: 80px;
+	height: 36px;
+	transform: skew(-45deg);
+	position: relative;
+	right: -18px;
+}
+#b3_front {
+	width: 80px;
+	height: 10px;
+}
+
+#b3_right {
+	width: 36px;
+	height: 10px;
+	transform: skewY(-45deg);
+	position: relative;
+	top: -18px;
+}
+
+.fruit-1 {
+	z-index: 4;
+	height: 50px;
+	width: 50px;
+	border-radius: 25px;
+	background-color: #C64F4E;
+	background: radial-gradient(#54572F, #C64F4E);
+	position: absolute;
+	top: 180px;
+	left: 290px;
+	border: 1px solid black;
+}
+
+.fruit-2{
+	z-index: 4;
+	height: 80px;
+	width: 80px;
+	border-radius: 40px;
+	background-color: #EFD69C;
+	position: absolute;
+	top: 180px;
+	left: 450px;
+	border: 1px solid black;
+}
+
+#pineapple {
+	z-index: 5;
+	width: 100px;
+  	height: 120px;
+  	background-color: #FFD22B;
+  	border-radius: 50%;
+  	border: 1px solid black;
+  	border-top-left-radius: 50% 40%;
+	border-top-right-radius: 50% 40%;
+	border-bottom-left-radius: 50% 40%;
+	border-bottom-right-radius: 49% 40%;
+	position: absolute;
+	top: 160px;
+	left: 520px;
+}
+
+#leaf {
+	z-index: 4;
+	top: 105px;
+	left: 520px;
+	width: 0;
+	height: 0;
+	border-left: 50px solid transparent;
+	border-right: 50px solid transparent;
+	border-bottom: 100px solid green;
+	position: absolute;
+}
+#leaf:after {
+	width: 0;
+	height: 0;
+	border-left: 50px solid transparent;
+	border-right: 50px solid transparent;
+	border-top: 100px solid green;
+	position: absolute;
+	content: "";
+	top: 30px;
+	left: -50px;
+}
 
 
 
