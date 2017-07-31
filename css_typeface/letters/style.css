@@ -3,15 +3,14 @@
 	padding: 0;
 }
 
-#container {
+.container {
 	width: 40px;
 	height: 60px;
-	position: absolute;
-	top: 200px;
-	left: 200px;
+	margin: 10px;
+	float: left;
 }
 
-#container div{
+.container div{
 	float: left;
 }
 
