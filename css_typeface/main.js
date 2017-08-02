@@ -1,9 +1,6 @@
 
 $(document).ready(function(){
 
-	console.log((parseInt(1010, 2)).toString(16));
-
-
 	var letter_a = '<div class="container letter_a"><div class="short_col"><div class="long_vert bottom"><div class="top"></div></div></div><div id="center"><div class="center_bar bottom"><div class="top"></div></div><div class="center_vert"></div><div class="center_bar bottom"><div class="top"></div></div></div><div class="short_col"><div class="long_vert bottom"><div class="top"></div></div></div></div>';
 	var letter_b = '<div class="container letter_b"><div class="short_col"></div><div id="center"><div class="center_bar bottom"><div class="top"></div></div><div class="center_vert bottom"><div class="top"></div></div><div class="bar_left"></div><div class="bar_right bottom"><div class="top"></div></div><div class="center_vert bottom"><div class="top"></div></div><div class="center_bar bottom"><div class="top"></div></div></div><div class="short_col"><div class="long_vert bottom"><div class="top"></div></div></div></div>';
 	var letter_c = '<div class="container letter_c"><div class="short_col"><div class="long_vert bottom"><div class="top"></div></div></div><div id="center"><div class="center_bar bottom"><div class="top"></div></div><div class="center_vert"></div><div class="center_bar"></div><div class="center_vert"></div><div class="center_bar bottom"><div class="top"></div></div></div><div class="short_col"><div class="block bottom"><div class="top"></div></div><div class="short_vert"></div><div class="block"></div><div class="short_vert"></div><div class="block bottom"><div class="top"></div></div></div></div>';
@@ -42,54 +39,32 @@ $(document).ready(function(){
 		'letter_p': 11001111000000, 'letter_q': 11111100000100, 'letter_r': 11001111000100, 
 		'letter_s': 10110111000000, 'letter_t': 10000000010010, 'letter_u': 1111100000000,
 		'letter_v': 1100001001,     'letter_w': 1101100000101,  'letter_x': 101101,
-		'letter_y': 101010,         'letter_z': 10010000001001
-	};
+		'letter_y': 101010,         'letter_z': 10010000001001, 'letter_space': 1,
+		'letter_period': 1
+	}; 
 
-	console.log(lookup['letter_a']);
+	var w_count = 0;
+	var s_count = 0;
+	var word = 'w';
+	var sentence = 's';
+	var per = '.';
+	var words = [];
+	var sentences = [];
+	var curr_w = [];
+	var curr_s = [];
 
+	function addChar(letter, code, wrap){
+		$(wrap['name']).append(letter);
+		while (wrap !== null) {
+			wrap['var'] *= parseInt(lookup[code], 2);
+			wrap = wrap['parent'];
+		}
+	}
 
-	$("#page").append('<div class="word1"></div>');
-	var word1 = 1;
-	$(".word1").append(letter_c);
-	word1 *= parseInt(lookup[ 'letter_c'], 2);
-	$(".word1").append(letter_a);
-	word1 *= parseInt(lookup[ 'letter_a'], 2);
-	$(".word1").append(letter_s);
-	word1 *= parseInt(lookup[ 'letter_s'], 2);
-	$(".word1").append(letter_e);
-	word1 *= parseInt(lookup[ 'letter_e'], 2);
-	$(".word1").append(letter_y);
-	word1 *= parseInt(lookup[ 'letter_y'], 2);
-	$(".word1").append(letter_space);
-	$("#page").append('<div class="word2"></div>');
-	$(".word2").append(letter_f);
-	$(".word2").append(letter_g);
-	$(".word2").append(letter_h);
-	$(".word2").append(letter_i);
-	$(".word2").append(letter_j);
-	$("#page").append(letter_k);
-	$("#page").append(letter_l);
-	$("#page").append(letter_m);
-	$("#page").append(letter_n);
-	$("#page").append(letter_o);
-	$("#page").append(letter_p);
-	$("#page").append(letter_q);
-	$("#page").append(letter_r);
-	$("#page").append(letter_s);
-	$("#page").append(letter_t);
-	$("#page").append(letter_u);
-	$("#page").append(letter_v);
-	$("#page").append(letter_w);
-	$("#page").append(letter_x);
-	$("#page").append(letter_y);
-	$("#page").append(letter_z);
-	$("#page").append(letter_space);
-	$("#page").append(letter_period);
-
-	function hex_code(dec){
+	function hex_code(wrap){
 		var zero ='0';
-		var pound = '#'
-		var adj = word1 % 16777213;
+		var pound = '#';
+		var adj = wrap['var'] % 16777213;
 		var hex = adj.toString(16);	
 		if (hex.length < 6) {
 			while (hex.length !== 6){
@@ -99,9 +74,148 @@ $(document).ready(function(){
 		return pound.concat(hex);
 	}
 
+	function thick(wrap) {
+		console.log(wrap['var']);
+		var adj = wrap['var'] % 11;
+		if(adj === 10) adj = 1;
+		return adj;
+	}
 
-	$('#page .bottom').css('outline-color', 'green');
+	function update()	{
+		var top = ' .top'
+		var bottom = ' .bottom'
+		var up_name;
+		var name;
 
-	$('.word1 .top').css('background-color', hex_code(word1));
+		words.push(null);
+		sentences.push(null);
+		
+		for (var i = 0; words[i] !== null; i++) {
+			var word = words[i];
+			name = word['name'];
+			up_name = name.concat(bottom);
+			$(up_name).css("outline-color", hex_code(word));
+			console.log(word);
+		}
+		
+		for (var i = 0; sentences[i] !== null; i++) {
+			var sentence = sentences[i];
+			name = sentence['name'];
+			up_name = name.concat(top);
+			$(up_name).css("background-color", hex_code(sentence));		
+		}
+
+		var p_name = page['name'];
+		up_name = p_name.concat(bottom);
+		$(up_name).css("outline-width", thick(page));
+
+	}
+
+	function add( letter, code){
+		var new_class;
+		var new_w;
+		var new_s;
+		addChar(letter, code, curr_w);
+		if(letter === letter_space){
+			new_class = word + (++w_count);
+			$(curr_s['name']).append('<div class="' + new_class + '"></div>');
+			new_w = {'name': '.' + new_class, 'var': 1, 'parent': s0};
+			words.push(new_w);
+			curr_w = new_w;
+		}
+		if(letter === letter_period){
+			new_class = sentence + (++s_count);
+			$("#page").append('<div class="' + new_class + '"></div>');
+			new_s = {'name': '.' + new_class, 'var': 1, 'parent': page};
+			sentences.push(new_s);
+			curr_s = new_s;
+
+			new_class = word + (++w_count);
+			$(curr_s['name']).append('<div class="' + new_class + '"></div>');
+			new_w = {'name': '.' + new_class, 'var': 1, 'parent': curr_s};
+			words.push(new_w);
+			curr_w = new_w;
+		}
+	}
+
+	
+
+	var page = {'name': '#page', 'var': 1, 'parent': null};
+	
+	$("#page").append('<div class="s0"></div>');
+	var s0 = {'name': '.s0', 'var': 1, 'parent': page};
+	sentences.push(s0);
+	
+	$(".s0").append('<div class="w0"></div>');
+	var w0 = {'name': '.w0', 'var': 1, 'parent': s0	};
+	words.push(w0);
+
+	curr_w = w0;
+	curr_s = s0;
+
+	add(letter_w, 'letter_w');
+	add(letter_e, 'letter_e');
+	add(letter_l, 'letter_l');
+	add(letter_c, 'letter_c');
+	add(letter_o, 'letter_o');
+	add(letter_m, 'letter_m');
+	add(letter_e, 'letter_e');
+	add(letter_space, 'letter_space');
+	add(letter_t, 'letter_t');
+	add(letter_o, 'letter_o');
+	add(letter_space, 'letter_space');
+	add(letter_c, 'letter_c');
+	add(letter_a, 'letter_a');
+	add(letter_s, 'letter_s');
+	add(letter_e, 'letter_e');
+	add(letter_y, 'letter_y');
+	add(letter_s, 'letter_s');
+	add(letter_space, 'letter_space');
+	add(letter_f, 'letter_f');
+	add(letter_i, 'letter_i');
+	add(letter_n, 'letter_n');
+	add(letter_a, 'letter_a');
+	add(letter_l, 'letter_l');
+	add(letter_space, 'letter_space');
+	add(letter_p, 'letter_p');
+	add(letter_r, 'letter_r');
+	add(letter_o, 'letter_o');
+	add(letter_j, 'letter_j');
+	add(letter_e, 'letter_e');
+	add(letter_c, 'letter_c');
+	add(letter_t, 'letter_t');
+
+
+
+	update();
+
+	// addChar(letter_c, 'letter_c', w0);
+	// addChar(letter_a, 'letter_a', w0);
+	// addChar(letter_s, 'letter_s', w0);
+	// addChar(letter_e, 'letter_e', w0);
+	// addChar(letter_b, 'letter_b', w0);
+	// addChar(letter_d, 'letter_d', w0);
+	// addChar(letter_f, 'letter_f', w0);
+	// addChar(letter_g, 'letter_g', w0);
+	// addChar(letter_h, 'letter_h', w0);
+	// addChar(letter_i, 'letter_i', w0);
+	// addChar(letter_j, 'letter_j', w0);
+	// addChar(letter_k, 'letter_k', w0);
+	// addChar(letter_l, 'letter_l', w0);
+	// addChar(letter_m, 'letter_m', w0);
+	// addChar(letter_n, 'letter_n', w0);
+	// addChar(letter_o, 'letter_o', w0);
+	// addChar(letter_p, 'letter_p', w0);
+	// addChar(letter_q, 'letter_q', w0);
+	// addChar(letter_r, 'letter_r', w0);
+	// addChar(letter_s, 'letter_s', w0);
+	// addChar(letter_t, 'letter_t', w0);
+	// addChar(letter_u, 'letter_u', w0);
+	// addChar(letter_v, 'letter_v', w0);
+	// addChar(letter_w, 'letter_x', w0);
+	// addChar(letter_y, 'letter_y', w0);
+	// addChar(letter_z, 'letter_z', w0);
+
+
 
 });
